@@ -44,7 +44,7 @@ const projects = {
             "Enhanced interactivity and animation using Core.js and Modernizr-based fallbacks."
         ],
         technologies: ["Squarespace", "Open Graph", "Modernizr", "Adobe Fonts", "Core.js", "Open Graph"],
-        image: "images/work-section/Butterbackery.png",
+        image: "images/work-section/butterbackery.png",
         link: "https://butterbakery.life"
     },
     4: {
