@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website showcasing professional work and skills">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/portfolio/">
+    <meta property="og:title" content="Portfolio - Your Name">
+    <meta property="og:description" content="Portfolio website showcasing professional work and skills">
+    <meta property="og:image" content="https://yourusername.github.io/portfolio/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/portfolio/">
+    <meta property="twitter:title" content="Portfolio - Your Name">
+    <meta property="twitter:description" content="Portfolio website showcasing professional work and skills">
+    <meta property="twitter:image" content="https://yourusername.github.io/portfolio/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/portfolio/">
+    
+    <title>Brandon D. Vernon Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a'
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.6s ease-out',
+                        'fade-in-right': 'fadeInRight 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'bounce-in': 'bounceIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'stagger-fade-in': 'staggerFadeIn 0.6s ease-out forwards'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-100%)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(100%)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        bounceIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.3)' },
+                            '50%': { opacity: '1', transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        staggerFadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    
+    <!-- Custom Inline CSS -->
+    <link href="css/style.css" rel="stylesheet" >
+
+    <style>
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html {
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Offcanvas overlay */
+        .offcanvas-overlay {
+            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animation delays */
+        .animate-delay-100 { animation-delay: var(--animate-delay-100, 0.1s); }
+        .animate-delay-200 { animation-delay: var(--animate-delay-200, 0.2s); }
+        .animate-delay-300 { animation-delay: var(--animate-delay-300, 0.3s); }
+        .animate-delay-400 { animation-delay: var(--animate-delay-400, 0.4s); }
+        .animate-delay-500 { animation-delay: var(--animate-delay-500, 0.5s); }
+    </style>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-white dark:bg-dark-900 text-dark-900 dark:text-dark-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-dark-900/90 backdrop-blur-md border-b border-dark-200 dark:border-dark-700 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1" data-i18n="nav.logo">Brandon D. Vernon</a>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1" data-i18n="nav.home">Home</a>
+                    <a href="#about" class="nav-link text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1" data-i18n="nav.about">About</a>
+                    <a href="#work" class="nav-link text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1" data-i18n="nav.work">Work</a>
+                    <a href="#skills" class="nav-link text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1" data-i18n="nav.skills">Skills</a>
+                    <a href="#contact" class="nav-link text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1" data-i18n="nav.contact">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <div class="relative">
+                        <button id="dark-mode-toggle" class="p-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md transition-colors duration-200" aria-label="Toggle dark mode">
+                        <!-- Sun icon (shows in dark mode) -->
+                            <svg id="sun-icon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <!-- Moon icon (shows in light mode) -->
+                            <svg id="moon-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative">
+                        <select id="language-selector" class="bg-transparent text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1 border-none cursor-pointer transition-colors duration-200">
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
+                            <option value="fr">FR</option>
+                            <option value="de">DE</option>
+                            <option value="it">IT</option>
+                            <option value="pt">PT</option>
+                            <option value="ru">RU</option>
+                            <option value="ja">JA</option>
+                            <option value="ko">KO</option>
+                            <option value="zh">ZH</option>
+                            <option value="af">AF</option>
+                            <option value="he">HE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 border-t border-dark-200 dark:border-dark-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-dark-50 dark:hover:bg-dark-700 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500" data-i18n="nav.home">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-dark-50 dark:hover:bg-dark-700 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500" data-i18n="nav.about">About</a>
+                <a href="#work" class="mobile-nav-link block px-3 py-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-dark-50 dark:hover:bg-dark-700 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500" data-i18n="nav.work">Work</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-dark-50 dark:hover:bg-dark-700 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500" data-i18n="nav.skills">Skills</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-dark-50 dark:hover:bg-dark-700 rounded-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500" data-i18n="nav.contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <!-- Background Image with Parallax Effect -->
+            <div class="absolute inset-0 parallax-bg" style="background-image: url('images/bdv-cover.jpg');"></div>
+            
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+                <h1 class="home-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 opacity-0 transform translate-y-8">
+                    <span data-i18n="home.heading">Code Dreams to Reality!</span>
+                </h1>
+                <p class="home-subtitle text-xl sm:text-2xl lg:text-3xl mb-8 opacity-0 transform translate-y-8">
+                    <span data-i18n="home.subtitle">Web Developer | UX/UI Developer | Software Developer</span>
+                </p>
+                <button class="home-cta bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 opacity-0 transform translate-y-8" onclick="scrollToSection('work', 2000)">
+                    <span data-i18n="home.cta">View My Work</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen flex items-center py-16 bg-dark-50 dark:bg-dark-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="about-title text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-100 mb-4 opacity-0 transform translate-y-8">
+                        <span data-i18n="about.title">About Me</span>
+                    </h2>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image -->
+                    <div class="about-image order-2 lg:order-1 opacity-0 transform translate-x-8">
+                        <img src="images/bdv-profile.jpeg" 
+                             alt="Professional portrait" 
+                             class="w-full h-96 object-cover rounded-lg shadow-lg"
+                             loading="lazy">
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="about-content order-1 lg:order-2 opacity-0 transform -translate-x-8">
+                        <h3 class="text-2xl sm:text-3xl font-semibold text-dark-900 dark:text-dark-100 mb-6">
+                            <span data-i18n="about.heading">The Art Behind the Code</span>
+                        </h3>
+                        <p class="text-lg text-dark-600 dark:text-dark-300 leading-relaxed mb-6">
+                            <span data-i18n="about.description">I’m Brandon, a full-stack web developer who lives by the mantra “Code Dreams to Reality.” My journey began at The Art Institute of California – North Hollywood, where I earned my Bachelor’s in Web Design & Interactive Media. What started as an interest in art and technology evolved into a passion for crafting digital experiences that blend creativity with function. Guided by the MOST HIGH, I approach every project with understanding, adaptability, and a drive to go the extra mile. To me, code isn’t just logic, it’s a canvas where imagination meets purpose.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="min-h-screen py-16 bg-white dark:bg-dark-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="work-title text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-100 mb-4 opacity-0 transform translate-y-8">
+                        <span data-i18n="work.title">My Work</span>
+                    </h2>
+                    <p class="work-subtitle text-xl text-dark-600 dark:text-dark-300 opacity-0 transform translate-y-8">
+                        <span data-i18n="work.subtitle">A showcase of my recent projects</span>
+                    </p>
+                </div>
+                
+                <!-- Work Grid -->
+                <div class="work-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="work-item opacity-0 transform translate-y-8 cursor-pointer group" data-project="1">
+                        <div class="bg-white dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                            <img src="images/work-section/homegarden101.png" 
+                                 alt="Home Garden 101 is a landscaping company." 
+                                 class="w-full h-48 object-cover"
+                                 loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.project1.title">Home Garden 101</h3>
+                                <p class="text-dark-600 dark:text-dark-300" data-i18n="work.project1.description">Landscaping and Outdoors Service</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="work-item opacity-0 transform translate-y-8 cursor-pointer group" data-project="2">
+                        <div class="bg-white dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                            <img src="images/work-section/spektrummagazine.jpg" 
+                                 alt="Spektrum Magazine is a lifestyle and culture magazine." 
+                                 class="w-full h-48 object-cover"
+                                 loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.project2.title">Spektrum Magazine</h3>
+                                <p class="text-dark-600 dark:text-dark-300" data-i18n="work.project2.description">Lifestyle and Culture Magazine</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="work-item opacity-0 transform translate-y-8 cursor-pointer group" data-project="3">
+                        <div class="bg-white dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                            <img src="images/work-section/butterbackery.png" 
+                                 alt="Butter Backery is a mom and pa business that makes home made bakery." 
+                                 class="w-full h-48 object-cover"
+                                 loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.project3.title">Butter Bakery</h3>
+                                <p class="text-dark-600 dark:text-dark-300" data-i18n="work.project3.description">Home Made Bakery</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="work-item opacity-0 transform translate-y-8 cursor-pointer group" data-project="4">
+                        <div class="bg-white dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                            <img src="images/work-section/advantagevideosystem.png" 
+                                 alt="Advantage Video System is a product and information company focus on storage and video production." 
+                                 class="w-full h-48 object-cover"
+                                 loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.project4.title">Advantage Video System</h3>
+                                <p class="text-dark-600 dark:text-dark-300" data-i18n="work.project4.description">Product and Information</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="work-item opacity-0 transform translate-y-8 cursor-pointer group" data-project="5">
+                        <div class="bg-white dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                            <img src="images/work-section/ileadworldwide.png" 
+                                 alt="iLead-Worldwide is a market agency company" 
+                                 class="w-full h-48 object-cover"
+                                 loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.project5.title">iLead-Worldwide</h3>
+                                <p class="text-dark-600 dark:text-dark-300" data-i18n="work.project5.description">Marketing Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="work-item opacity-0 transform translate-y-8 cursor-pointer group" data-project="6">
+                        <div class="bg-white dark:bg-dark-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                            <img src="images/work-section/happydotbox.png" 
+                                 alt="Happy Dot Box is a lootbox company for luxary beauty products" 
+                                 class="w-full h-48 object-cover"
+                                 loading="lazy">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.project6.title">Happy Dot Box</h3>
+                                <p class="text-dark-600 dark:text-dark-300" data-i18n="work.project6.description">Luxury Beauty Products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Detail Offcanvas -->
+        <div id="work-offcanvas" class="fixed inset-0 z-50 hidden">
+            <div class="offcanvas-overlay absolute inset-0 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex">
+                <div id="offcanvas-panel" class="bg-white dark:bg-dark-800 w-full max-w-4xl mx-auto my-8 rounded-lg shadow-2xl transform translate-x-full transition-transform duration-300 overflow-hidden">
+                    <!-- Offcanvas Header -->
+                    <div class="flex items-center justify-between p-6 border-b border-dark-200 dark:border-dark-700">
+                        <h3 id="offcanvas-title" class="text-2xl font-semibold text-dark-900 dark:text-dark-100"></h3>
+                        <button id="offcanvas-close" 
+                                class="text-dark-400 hover:text-dark-600 dark:hover:text-dark-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md p-2"
+                                aria-label="Close project details">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Offcanvas Content -->
+                    <div class="p-6 overflow-y-auto max-h-[calc(100vh-200px)]">
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <!-- Project Details -->
+                            <div id="offcanvas-details">
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.detail.role">Role</h4>
+                                        <p id="project-role" class="text-dark-600 dark:text-dark-300"></p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.detail.responsibilities">Responsibilities</h4>
+                                        <ul id="project-responsibilities" class="list-disc list-inside text-dark-600 dark:text-dark-300 space-y-1"></ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-dark-900 dark:text-dark-100 mb-2" data-i18n="work.detail.technologies">Technologies</h4>
+                                        <div id="project-technologies" class="flex flex-wrap gap-2"></div>
+                                    </div>
+                                    <div>
+                                        <a id="project-link" 
+                                           href="#" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2">
+                                            <span data-i18n="work.detail.visit">Visit Website</span>
+                                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project Image -->
+                            <div id="offcanvas-image" class="flex items-center justify-center">
+                                <img id="project-image" 
+                                     src="" 
+                                     alt="" 
+                                     class="max-w-full h-auto rounded-lg shadow-lg"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="min-h-screen py-16 bg-dark-50 dark:bg-dark-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="skills-title text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-100 mb-4 opacity-0 transform translate-y-8">
+                        <span data-i18n="skills.title">Skills & Technologies</span>
+                    </h2>
+                    <p class="skills-subtitle text-xl text-dark-600 dark:text-dark-300 opacity-0 transform translate-y-8">
+                        <span data-i18n="skills.subtitle">Tools and technologies I work with</span>
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Front-end Languages -->
+                    <div class="skill-category opacity-0 transform translate-y-8">
+                        <h3 class="text-2xl font-semibold text-dark-900 dark:text-dark-100 mb-6" data-i18n="skills.frontend.title">Front-end Languages</h3>
+                        <ul class="space-y-3">
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-html">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">HTML5</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.frontend.html">Semantic markup and accessibility</span>
+                                <div id="tooltip-html" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.frontend.html.tooltip">5+ years experience with semantic HTML5</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-css">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">CSS3</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.frontend.css">Advanced styling and animations</span>
+                                <div id="tooltip-css" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.frontend.css.tooltip">Expert in CSS Grid, Flexbox, and animations</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-js">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">JavaScript</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.frontend.js">ES6+ and modern frameworks</span>
+                                <div id="tooltip-js" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.frontend.js.tooltip">Advanced JavaScript with React,and Node.js</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Back-end Languages -->
+                    <div class="skill-category opacity-0 transform translate-y-8">
+                        <h3 class="text-2xl font-semibold text-dark-900 dark:text-dark-100 mb-6" data-i18n="skills.backend.title">Back-end Languages</h3>
+                        <ul class="space-y-3">
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-node">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Node.js</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.backend.node">Server-side JavaScript</span>
+                                <div id="tooltip-node" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.backend.node.tooltip">Express.js, REST APIs, and real-time applications</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-php">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">PHP</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.backend.php">Web development and CMS</span>
+                                <div id="tooltip-php" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.backend.php.tooltip">Laravel, WordPress, and custom applications</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Build Technologies -->
+                    <div class="skill-category opacity-0 transform translate-y-8">
+                        <h3 class="text-2xl font-semibold text-dark-900 dark:text-dark-100 mb-6" data-i18n="skills.build.title">Build Technologies</h3>
+                        <ul class="space-y-3">
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-webpack">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Webpack</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.build.webpack">Module bundling and optimization</span>
+                                <div id="tooltip-webpack" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.build.webpack.tooltip">Advanced configuration and performance optimization</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-vite">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Vite</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.build.vite">Fast build tool and dev server</span>
+                                <div id="tooltip-vite" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.build.vite.tooltip">Modern development experience with hot reload</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-docker">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Docker</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.build.docker">Containerization and deployment</span>
+                                <div id="tooltip-docker" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.build.docker.tooltip">Container orchestration and CI/CD pipelines</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- CMS Platforms -->
+                    <div class="skill-category opacity-0 transform translate-y-8">
+                        <h3 class="text-2xl font-semibold text-dark-900 dark:text-dark-100 mb-6" data-i18n="skills.cms.title">CMS Platforms</h3>
+                        <ul class="space-y-3">
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-wordpress">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">WordPress</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.cms.wordpress">Custom themes and plugins</span>
+                                <div id="tooltip-wordpress" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.cms.wordpress.tooltip">Advanced customization and performance optimization</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-shopify">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Shopify</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.cms.shopify">Commerce platform to sale</span>
+                                <div id="tooltip-shopify" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.cms.shopify.tooltip">All-in-one platform for building online stores</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-squarespace">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Square Space</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.cms.squarespace">Offers stylish templates and design</span>
+                                <div id="tooltip-squarespace" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.cms.squarespace.tooltip">All-in-one website builder</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Learning / In Progress -->
+                    <div class="skill-category opacity-0 transform translate-y-8">
+                        <h3 class="text-2xl font-semibold text-dark-900 dark:text-dark-100 mb-6" data-i18n="skills.learning.title">Learning / In Progress</h3>
+                        <ul class="space-y-3">
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-python">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Python</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.learning.python">Data science and automation</span>
+                                <div id="tooltip-python" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.learning.python.tooltip">Django, Flask, and machine learning libraries</span>
+                                </div>
+                            </li>
+                            <li class="skill-item flex items-center p-3 bg-white dark:bg-dark-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer group" tabindex="0" role="button" aria-describedby="tooltip-ai">
+                                <span class="text-primary-600 dark:text-primary-400 font-semibold mr-3">Ai</span>
+                                <span class="text-dark-600 dark:text-dark-300" data-i18n="skills.learning.python">Machine learning applications</span>
+                                <div id="tooltip-ai" class="tooltip hidden absolute z-10 bg-dark-900 text-white text-sm rounded-lg py-2 px-3 mt-8 opacity-0 transition-opacity duration-200">
+                                    <span data-i18n="skills.learning.ai.tooltip">TensorFlow, PyTorch, and practical AI solutions</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="min-h-screen py-16 bg-white dark:bg-dark-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="contact-title text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-100 mb-4 opacity-0 transform translate-y-8">
+                        <span data-i18n="contact.title">Get In Touch</span>
+                    </h2>
+                    <p class="contact-subtitle text-xl text-dark-600 dark:text-dark-300 opacity-0 transform translate-y-8">
+                        <span data-i18n="contact.subtitle">Let's work together on your next project</span>
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Contact Info -->
+                    <div class="contact-info opacity-0 transform -translate-x-8">
+                        <h3 class="text-2xl sm:text-3xl font-semibold text-dark-900 dark:text-dark-100 mb-6">
+                            <span data-i18n="contact.heading">Ready to Start a Project?</span>
+                        </h3>
+                        <p class="text-lg text-dark-600 dark:text-dark-300 leading-relaxed mb-8">
+                            <span data-i18n="contact.description">I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!</span>
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span class="text-dark-600 dark:text-dark-300">brandondvernon.job@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form opacity-0 transform translate-x-8">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2" data-i18n="contact.form.firstName">First Name</label>
+                                    <input type="text" 
+                                           id="firstName" 
+                                           name="firstName" 
+                                           required 
+                                           class="w-full px-4 py-3 border border-dark-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-dark-900 dark:text-dark-100 transition-colors duration-200"
+                                           aria-describedby="firstName-error">
+                                    <div id="firstName-error" class="error-message hidden text-red-600 dark:text-red-400 text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2" data-i18n="contact.form.lastName">Last Name</label>
+                                    <input type="text" 
+                                           id="lastName" 
+                                           name="lastName" 
+                                           required 
+                                           class="w-full px-4 py-3 border border-dark-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-dark-900 dark:text-dark-100 transition-colors duration-200"
+                                           aria-describedby="lastName-error">
+                                    <div id="lastName-error" class="error-message hidden text-red-600 dark:text-red-400 text-sm mt-1"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2" data-i18n="contact.form.email">Email</label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       required 
+                                       class="w-full px-4 py-3 border border-dark-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-dark-900 dark:text-dark-100 transition-colors duration-200"
+                                       aria-describedby="email-error">
+                                <div id="email-error" class="error-message hidden text-red-600 dark:text-red-400 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <fieldset>
+                                    <legend class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-3" data-i18n="contact.form.inquiry">Type of Inquiry</legend>
+                                    <div class="space-y-3">
+                                        <label class="flex items-center">
+                                            <input type="radio" 
+                                                   name="inquiry" 
+                                                   value="project" 
+                                                   class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-dark-300 dark:border-dark-600"
+                                                   aria-describedby="inquiry-error">
+                                            <span class="ml-3 text-sm text-dark-700 dark:text-dark-300" data-i18n="contact.form.project">Hiring</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" 
+                                                   name="inquiry" 
+                                                   value="collaboration" 
+                                                   class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-dark-300 dark:border-dark-600"
+                                                   aria-describedby="inquiry-error">
+                                            <span class="ml-3 text-sm text-dark-700 dark:text-dark-300" data-i18n="contact.form.collaboration">Freelance</span>
+                                        </label>
+                                    </div>
+                                    <div id="inquiry-error" class="error-message hidden text-red-600 dark:text-red-400 text-sm mt-1"></div>
+                                </fieldset>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2" data-i18n="contact.form.message">Message</label>
+                                <textarea id="message" 
+                                          name="message" 
+                                          rows="6" 
+                                          maxlength="1000" 
+                                          required 
+                                          class="w-full px-4 py-3 border border-dark-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-dark-900 dark:text-dark-100 transition-colors duration-200 resize-y"
+                                          aria-describedby="message-error message-counter"
+                                          placeholder="Tell me about your project..."></textarea>
+                                <div class="flex justify-between items-center mt-1">
+                                    <div id="message-error" class="error-message hidden text-red-600 dark:text-red-400 text-sm"></div>
+                                    <div id="message-counter" class="text-sm text-dark-500 dark:text-dark-400">
+                                        <span id="message-count">0</span>/1000
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" 
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                                <span data-i18n="contact.form.submit">Send Message</span>
+                            </button>
+                            
+                            <div id="form-success" class="hidden bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg">
+                                <span data-i18n="contact.form.success">Thank you! Your message has been sent successfully.</span>
+                            </div>
+                            
+                            <div id="form-error" class="hidden bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg">
+                                <span data-i18n="contact.form.error">Sorry, there was an error sending your message. Please try again.</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark-800 dark:bg-dark-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Footer Header -->
+                <div class="footer-info">
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="footer.heading">Let's Connect</h3>
+                    <p class="text-dark-300" data-i18n="footer.subtitle">Building the future, one project at a time</p>
+                </div>
+                
+                <!-- Social Icons -->
+                <div class="footer-social flex justify-center space-x-6">
+                    <a href="https://github.com/Brandon-D-Vernon" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="text-dark-300 hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md p-1"
+                       aria-label="GitHub">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/brandon-d-vernon/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="text-dark-300 hover:text-primary-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md p-1"
+                       aria-label="LinkedIn">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Back to Top Button -->
+                <div class="footer-scroll flex justify-end">
+                    <button onclick="scrollToSection('home', 2000)" 
+                            class="bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                            aria-label="Back to top">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-700 mt-8 pt-8 text-center">
+                <p class="text-dark-400" data-i18n="footer.copyright">© Brandon D. Vernon, 2025. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    
+    <script src="js/contact-form.js"></script>
+    <script src="js/offcanvas.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

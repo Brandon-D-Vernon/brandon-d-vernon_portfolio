@@ -1,0 +1,3 @@
+node_modules/
+dist/ (if using a separate build output)
+*.log
